@@ -1,0 +1,88 @@
+int start() {
+   int i, counter;
+   double Range, AvgRange;
+   int CountBars=Bars;
+
+
+   for(i=0; i<CountBars; i++)
+   
+   
+   {
+      counter=i;
+      Range=0;
+      AvgRange=0;
+      for (counter=i ;counter<=i+2;counter++)
+      {
+         AvgRange=AvgRange+MathAbs(High[counter]-Low[counter]);
+      }
+      Range=AvgRange/10;
+      
+        
+	     //  UP
+	     if (
+	         Close[i+1]>Open[i+1]&& //Bull
+	         Close[i+2]<Open[i+2]&& //Bear
+	         High[i+2] < High[i+1] &&
+	         Low[i+2] > Low[i+1]
+	        )
+           {
+          	Up[i+1]=Low[i+1]-Range*1.5;
+           }int start() {
+   int i, counter;
+   double Range, AvgRange;
+   int CountBars=Bars;
+
+
+   for(i=0; i<CountBars; i++)
+   
+   
+   {
+      counter=i;
+      Range=0;
+      AvgRange=0;
+      for (counter=i ;counter<=i+2;counter++)
+      {
+         AvgRange=AvgRange+MathAbs(High[counter]-Low[counter]);
+      }
+      Range=AvgRange/10;
+      
+        
+	     //  UP
+	     if (
+	         Close[i+1]>Open[i+1]&& //Bull
+	         Close[i+2]<Open[i+2]&& //Bear
+	         High[i+2] < High[i+1] &&
+	         Low[i+2] > Low[i+1]
+	        )
+           {
+          	Up[i+1]=Low[i+1]-Range*1.5;
+           }int start() {
+   int i, counter;
+   double Range, AvgRange;
+   int CountBars=Bars;
+
+
+   for(i=0; i<CountBars; i++)
+   
+   
+   {
+      counter=i;
+      Range=0;
+      AvgRange=0;
+      for (counter=i ;counter<=i+2;counter++)
+      {
+         AvgRange=AvgRange+MathAbs(High[counter]-Low[counter]);
+      }
+      Range=AvgRange/10;
+      
+        
+	     //  UP
+	     if (
+	         Close[i+1]>Open[i+1]&& //Bull
+	         Close[i+2]<Open[i+2]&& //Bear
+	         High[i+2] < High[i+1] &&
+	         Low[i+2] > Low[i+1]
+	        )
+           {
+          	Up[i+1]=Low[i+1]-Range*1.5;
+           }
