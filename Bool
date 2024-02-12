@@ -1,0 +1,224 @@
+
+//+-------------------------------------------------------------------------------------------+
+//| Indicator Global Inputs                                                                   |
+//+-------------------------------------------------------------------------------------------+
+#property indicator_chart_window
+
+#include <stdlib.mqh>
+//See function documentation at http://msdn.microsoft.com/en-us/library/ms725473(VS.85).aspx
+#import "kernel32.dll"
+void GetLocalTime(int& LocalTimeArray[]);
+void GetSystemTime(int& systemTimeArray[]);
+int  GetTimeZoneInformation(int& LocalTZInfoArray[]);
+bool SystemTimeToTzSpecificLocalTime(int& targetTZinfoArray[],
+     int& systemTimeArray[], int& targetTimeArray[]);
+#import
+
+//Global External Inputs-----------------------------------------------------------------------
+extern bool   Indicator_On                         = true;
+extern string Preface____________                  = "Find & enter Clock Proxy Server Tz Location.";
+extern bool   Clock_Normal_vs_Find_Server          = true;
+extern string Clock_Proxy_Server_Tz_Location       = "Helsinki";
+extern string Preface_____________                 = "Read User Notes.  Contact your broker to confirm.";
+extern string _                                    = "";
+extern string Part_1                               = "Indicator Master Controls:";
+extern bool   Show_Access_Panel                    = true;
+extern bool   __Show_Logo_in_Panel                 = false;
+extern bool   __Show_Clock_in_Panel                = true;
+extern bool   Ask_Line_On                          = true;
+extern int    __Ask_Max_TF                         = 15;
+extern bool   Bid_Line_On                          = false;
+extern bool   Levels_On                            = false;
+extern bool   __Show_Half_Levels                   = false;
+extern bool   __Show_Quarter_Levels                = true;
+extern int    __Levels_Whole_Max_TF                = 1440;
+extern int    __Levels_Half_Max_TF                 = 1440;
+extern int    __Levels_Quarter_Max_TF              = 60;
+extern int    __Incr_Decr_Levels_Density           = 0;
+extern bool   Natural_Fibos                        = false;
+extern bool   __Use_Tz_Filter                      = false;
+extern int    __Fibos_Max_TF                       = 60;
+extern bool   Pivots_Day_vs_Fibonacci              = false;
+extern bool   __Pivots_PVT_On                      = false;
+extern bool   __Pivots_SR_On                       = false;
+extern bool   ____Pivots_Mid_Included              = true;
+extern int    __Show_Levels_Thru_2345              = 5;
+extern int    __PVT_Max_TF                         = 60;
+extern bool   __PivotsTz_On                        = true;
+extern bool   ____Use_Preferred_Offset             = true;
+extern int    ____Alternative_GMT_Offset           = 0;
+extern bool   Range_Day_On                         = false;
+extern int    __Day_Max_TF                         = 1440;
+extern bool   Range_Week_On                        = false;
+extern int    __Week_Max_TF                        = 10080;
+extern bool   Separators_On                        = false;
+extern int    __Prior_Days_To_Show                 = 5;
+extern int    __Separators_Max_TF                  = 60;
+extern bool   vLines_On                            = true;
+extern int    __Current_Session_Max_TF             = 60;
+extern int    __Prior_Sessions_Max_TF              = 60;
+extern int    __Prior_Sessions_To_Show             = 0;
+extern bool   __Prior_Ao_with_Current_Session_only = false;
+extern bool   __Ao_in_All_Sessions                 = true;
+extern bool   __Fo_in_All_Sessions                 = true;
+extern string TF_Choices                           = "1-5-15-30-60-240-1440-10080-43200";
+
+extern string __                                   = "";
+extern string Part_2                               = "Panel Settings:";
+extern bool   Show_Forex_Fractional_Pip            = false;
+extern int    __Shift_Fractional_Pip               = 0;
+extern int    Days_In_Range_Day_Avg                = 15;
+extern int    Weeks_In_Week_ATR                    = 13;
+extern color  Panel_Background_Color               = C'025,025,025';
+extern color  Symbol_And_TF_Color                  = Lime;
+extern color  Spread_Color                         = White;
+extern color  Range_Color                          = Lime;
+extern color  Swaps_Color                          = White;
+extern color  Candle_Time_Color                    = Lime;
+extern color  Bid_UP_Color                         = C'046,188,046';
+extern color  Bid_DN_Color                         = C'234,000,000';
+extern color  Bid_Last_Digit_Normal                = C'100,100,100';
+extern color  Bid_Last_Digit_Small                 = C'160,160,160';
+extern color  Logo                                 = C'095,103,211';
+
+extern string ___                                  = "";
+extern string Part_3                               = "Ask-Bid Line Settings:";
+extern color  Ask_Ray_Color                        = C'100,100,100';
+extern int    Ask_Ray_LineStyle_01234              = 0;
+extern int    Ask_Ray_Thickness                    = 1;
+extern color  Bid_Ray_Color                        = C'100,100,100';
+extern int    Bid_Ray_LineStyle_01234              = 0;
+extern int    Bid_Ray_Thickness                    = 1;
+extern bool   Subordinate_Ask_Bid_Lines            = true;
+extern color  Ask_Dot_Color                        = Gainsboro;
+extern int    Ask_Dot_Size                         = 6;
+extern color  Ask_Dot_Cntr_Color                   = C'100,100,100';
+extern int    Ask_Dot_Cntr_Size                    = 4;
+extern color  Bid_Dot_Up_Color                     = Lime;
+extern color  Bid_Dot_Dn_Color                     = Red;
+extern color  Bid_Dot_Mono_Color                   = White;
+extern bool   Use_Bid_Dot_Mono_Color               = false;
+extern int    Bid_Dot_Size                         = 6;
+
+extern string ____                                 = "";
+extern string Part_4                               = "Horizontal Lines Position Settings:";
+extern string note_4_0                             = "Choose line display number.";
+extern string note_4_1                             = "1 = Fullscreen";
+extern string note_4_2                             = "2 = Session";
+extern int    Levels_Display_Number                = 1;
+extern int    Pivots_Display_Number                = 2;
+extern int    Ranges_Display_Number                = 2;
+extern bool   Subordinate_Lines                    = true;
+
+extern string _____                                = "";
+extern string Part_5                               = "Horizontal Lines Labels Settings:";
+extern bool   Pivot_PVT_Label_On                   = false;
+extern bool   Pivot_SRM_Labels_On                  = false;
+extern bool   Range_Labels_On                      = false;
+extern color  Labels_Color                         = DarkGray;
+extern bool   Subordinate_Labels                   = true;
+
+extern string ______                               = "";
+extern string Part_6                               = "Levels Settings:";
+extern color  Level_Whole_Color                    = C'028,051,089';
+extern int    Level_Whole_Style_01234              = 0;
+extern int    Level_Whole_Width_12345              = 1;
+extern color  Level_Half_Color                     = C'000,070,000';
+extern int    Level_Half_Style_01234               = 0;
+extern int    Level_Half_Width_12345               = 1;
+extern color  Level_Quarter_Color                  = C'064,049,028';
+extern int    Level_Quarter_Style_01234            = 0;
+extern int    Level_Quarter_Width_12345            = 1;
+
+extern string _______                              = "";
+extern string Part_7                               = "Fibos Settings:";
+extern color  H_Fibo_Color                         = C'091,104,191';
+extern color  M_Fibo_Color                         = C'113,111,125';
+extern color  L_Fibo_Color                         = C'208,078,070';
+extern int    F_Style_01234                        = 0;
+extern int    F_Width_12345                        = 1;
+extern bool   Subordinate_Fibos                    = false;
+
+extern string ________                             = "";
+extern string Part_8                               = "Pivots Settings:";
+extern color  PVT1_Back_Color                      = CLR_NONE;
+extern int    PVT1_Style_01234                     = 0;
+extern int    PVT1_Width_12345                     = 1;
+extern color  PVT2_Top_Color                       = C'209,080,203';
+extern int    PVT2_Style_01234                     = 2;
+extern int    PVT2_Width_12345                     = 1;
+extern color  R_Pivot_Color                        = C'071,102,207';
+extern int    R_Style_01234                        = 2;
+extern int    R_Width_12345                        = 1;
+extern color  S_Pivot_Color                        = C'202,034,004';
+extern int    S_Style_01234                        = 2;
+extern int    S_Width_12345                        = 1;
+extern color  MidPivots_Color                      = C'106,106,000';
+extern int    mP_Style_01234                       = 2;
+extern int    mP_Width_12345                       = 1;
+
+extern string _________                            = "";
+extern string Part_9                               = "Range Day Settings:";
+extern color  RDH_Color                            = C'107,107,220';
+extern color  RDL_Color                            = C'214,072,065';
+extern int    RD_Style_01234                       = 0;
+extern int    RD_Width_12345                       = 2;
+
+extern string __________                           = "";
+extern string Part_10                              = "Range Week Settings:";
+extern color  RWH_Color                            = C'091,091,217';
+extern color  RWL_Color                            = C'208,060,055';
+extern int    RW_Style_01234                       = 0;
+extern int    RW_Width_12345                       = 3;
+
+extern string ___________                          = "";
+extern string Part_11                              = "Separators Settings:";
+extern color  Separators_Color                     = C'085,085,085';
+extern int    Separators_Style_01234               = 2;
+extern int    Separators_Width_12345               = 1;
+extern bool   Separators_Thru_SubWindows           = true;
+
+extern string ____________                         = "";
+extern string Part_12                              = "vLines & Labels Settings:";
+extern color  vLines_Color                         = C'074,074,074';
+extern int    vLines_Style_01234                   = 2;
+extern int    vLines_Width_12345                   = 1;
+extern bool   vLines_Thru_SubWindows               = false;
+extern bool   Sbow_vLabels                         = true;
+extern color  vLabels_Color                        = White;
+
+extern string _____________                        = "";
+extern string Part_13                              = "Clock Settings:";
+extern color  Clock_MktClosed                      = C'124,124,124';
+extern color  Location_MktClosed                   = C'124,124,124';
+extern color  Clock_MktOpen                        = Yellow;
+extern color  Location_MktOpen                     = Lime;
+extern bool   Show_AMPM_Time                       = true;
+extern string Note_12_1                            = "Choosing Locations to Display:";
+extern string Note_12_2                            = "Select 7 maximum from list,";
+extern string Note_12_3                            = "0 = display off.";
+extern string Note_12_4                            = "1 = Display on.";
+extern int    Broker                               = 0;
+extern int    Local                                = 0; 
+extern int    Auckland                             = 0;
+extern int    Sydney                               = 1;
+extern int    Tokyo                                = 1;
+extern int    HongKong                             = 0;
+extern int    Jakarta                              = 0;
+extern int    India                                = 0;
+extern int    Dubai                                = 0;
+extern int    Moscow                               = 0;
+extern int    Israel                               = 0;
+extern int    Helsinki                             = 1;
+extern int    Frankfurt                            = 1;
+extern int 	  London                               = 1;
+extern int    GMT                                  = 0;
+extern int    Brazil                               = 0;
+extern int    NewYork                              = 1;
+extern int    Central                              = 0;
+extern int    Mexico                               = 0;
+extern int    Mountain                             = 0;
+extern int    Pacific                              = 0;
+
+//Buffers, Constants and Variables-------------------------------------------------------------
+bool          Deinitialized;
