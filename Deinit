@@ -1,0 +1,131 @@
+/Deinit
+int           obj_total,k;
+string        name;
+
+//Panel & Bid Line
+color         Static_Price_Color, Static_Bid_Color, Bid_Dot_Color, Static_Bid_Dot_Color,
+              Dot_Up_Color, Dot_Dn_Color;
+double        Poin, Poin2,New_Price,Old_Price,level,Spread,ARg,RangeAchieved,
+              dRange,wRange,dRG,wRG,pipValue,tic,size;
+datetime      T1,T2;
+int           Chart_Scale,modifier,Color,Factor,G1,G2,h,i,l,m,s,t,LP,LS;
+string        item01 = "z[CP Panel] Box 1";
+string        item02 = "y[CP Panel] Box 2";
+string        item03 = "z[CP Text] ID&TF";
+string        item04 = "z[CP Text] Spread";
+string        item05 = "z[CP Text] Spread2";
+string        item06 = "z[CP Text] Pip";
+string        item07 = "z[CP Text]   Pip2";
+string        item08 = "z[CP Text] Range";
+string        item09 = "z[CP Text]   Range2";
+string        item10 = "z[CP Text] Swap";
+string        item11 = "z[CP Text]   Swap2";
+string        item12 = "z[CP Text] Price1";
+string        item13 = "z[CP Text]   Price2";
+string        item14 = "z[CP Text] Logo1 S";
+string        item15 = "z[CP Text] Logo1 o";
+string        item16 = "z[CP Text] Logo1 n";
+string        item17 = "z[CP Text] Logo1 i";
+string        item18 = "z[CP Text] Logo1 c";
+string        item19 = "z[CP Text] Logo1 R";
+string        item20 = "d[CP Bid] Bid Line";
+string        item21 = "e[CP Bid] Bid Dot";
+string        item22 = "d[CP Ask] Ask Line";
+string        item23 = "d[CP Ask] Ask Dot";
+string        item24 = "e[CP Ask] Ask Dot Cntr";
+string        ID,Price,C,tab,tab1,timeleft,Tic;
+
+//Levels
+color         linecolor;
+double        linelevel, linestyle, linewidth, BL;
+int           j,Line1_Color, Line2_Color, Line3_Color;
+int           u1=00, u2=50, u3=25, u4=75;
+int           v1, ssp, ssp1, NumberOfRanges;
+string        linename;
+
+//Fibos
+bool          fib;
+double        H10,H9,H8,H7,H6,H5,H4,H3,H2,H1,M1,M2,M3,M4,M5,FH,FL,FD,
+              L1,L2,L3,L4,L5,L6,L7,L8,L9,L10;
+
+//Pivots
+datetime      pvtDT;
+double        p,q,r1,r2,r3,r4,r5,s1,s2,s3,s4,s5;
+double        today_high,today_low,today_open,today_close;
+double        yesterday_high, yesterday_low, yesterday_open, yesterday_close;
+int           Pdisplay,idxfirstbaryesterday,idxlastbaryesterday,idxfirstbartoday,idxbar,
+              tzdiff,tzdiffsec,barsperday,dayofweektoday,dayofweektofind,Pivots_GMT_Offset;            
+string        prefix;
+
+//Range Day
+datetime      d1,d2;
+double        low,high,dRangeHigh,dRangeLow,HiToday,LoToday;
+int           ii,iii,x,xx,r,dtf,Hbarshift,Lbarshift,rdc,rwc,Rdisplay,RDshift,idxbar2;
+
+//Range Week
+datetime      w1,w2;
+double        week_open, HiWeek, LoWeek;
+double        wRangeAvg, wRangeHigh, wRangeLow;
+int           wtf, wHbarshift, wLbarshift, RWdisplay, RWshift;
+
+//Horizontal Lines Placement
+datetime      startline, stopline,T,T4;
+int           a,b,c,R2;
+string        line;
+
+//Horizontal Labels Placement
+datetime      startlabel;
+string        label, spc;
+string        FontStyle = "Verdana";
+int           FontSize  = 8;
+
+//vLines & Labels
+datetime      T3, tme2, time4;
+int           bps, MF, shift;
+string        vLabels_Asian_Open       = "      Ao ";
+string        vLabels_Berlin_Open      = "     F  ";
+string        vLabels_London_Open      = "      Lo";
+string        vLabels_NewYork_Open     = "     Ny";
+string        vLabels_London_Close     = "      Lc ";
+string        Label_Day_Separator      = "day";
+string        vFontStyle               = "Verdana";
+int           vFontSize                = 8;
+
+//Get GMT Offsets in Support of PivotsTz and Market vLines
+int           GMT_Ref_Time, Sydney_GMT_Offset, Berlin_GMT_Offset, London_GMT_Offset,
+              NYC_GMT_Offset, GMT_At_Lo, GMT_At_NYo, GMT_At_Lc, GMT_At_Ao, GMT_At_Fo,
+              Broker_GMT_Offset;
+
+//Import Time Zone Data in Support of Clock, PivotsTz and Market vLines
+bool          BKR_UTC_Match, FLAG_static_broker, Displaying_Pivots;
+datetime      Local_Time,BrokerDT,AucklandDT,SydneyDT,TokyoDT,ChinaDT,JakartaDT,IndiaDT,
+              DubaiDT,MoscowDT,IsraelDT,HelsinkiDT,BerlinDT,LondonDT,UTC,BrazilDT,NewYorkDT,
+              CentralDT,MexicoDT,MountainDT,PacificDT,StaticBrokerDT;
+int           ClockFontSize, TimezoneFontSize, LineSpacing, z, time, place, offset,top;
+int           AucklandTZInfoArray[43],SydneyTZInfoArray[43],TokyoTZInfoArray[43],
+              ChinaTZInfoArray[43],JakartaTZInfoArray[43],IndiaTZInfoArray[43],
+              DubaiTZInfoArray[43],MoscowTZInfoArray[43],IsraelTZInfoArray[43],
+              HelsinkiTZInfoArray[43],BerlinTZInfoArray[43],LondonTZInfoArray[43],
+              BrazilTZInfoArray[43],NewYorkTZInfoArray[43],CentralTZInfoArray[43],
+              MexicoTZInfoArray[43],MountainTZInfoArray[43],PacificTZInfoArray[43],
+              LocalTZInfoArray[43];
+int           LocalTimeArray[4],systemTimeArray[4],AucklandTimeArray[4],SydneyTimeArray[4],
+              TokyoTimeArray[4],ChinaTimeArray[4],JakartaTimeArray[4],IndiaTimeArray[4],
+              DubaiTimeArray[4],MoscowTimeArray[4],IsraelTimeArray[4],HelsinkiTimeArray[4],
+              BerlinTimeArray[4],LondonTimeArray[4],BrazilTimeArray[4],NewYorkTimeArray[4],
+              CentralTimeArray[4],MexicoTimeArray[4],MountainTimeArray[4],PacificTimeArray[4];
+string        Locals,Brokers,Aucklands,Sydneys,Tokyos,Chinas,Jakartas,Indias,Dubais,
+              Moscows,Israels,Helsinkis,Berlins,Londons,UTCs,Brazils,NewYorks,Centrals,
+              Mexicos,Mountains,Pacifics;
+string        Brokerp, Localp, Aucklandp, Sydneyp, Tokyop, Chinap, Jakartap,
+              Indiap, Dubaip, Moscowp, Israelp, Helsinkip, Berlinp, Londonp, UTCp,
+              Brazilp, NYp, Centralp, Mexicop, Mountainp, Pacificp, FontName;
+string        timeStr,LocalTimeS,sMonth,sDay,sHour,sMin,sSec;
+int           hour,nYear,nMonth,nDay,nHour,nMin,nSec,nMilliSec;
+
+//Clock - Normal hrs 8-17 (9 hrs), Sydney 8-17 (9 hrs) and Tokyo 9-18 (9 hrs)
+int           SydneyLocalOpenHour,SydneyLocalCloseHour;
+int           LocalOpenHour        =  8;
+int           LocalCloseHour       = 17;
+int           TokyoLocalOpenHour   =  9;
+int           TokyoLocalCloseHour  = 18;
