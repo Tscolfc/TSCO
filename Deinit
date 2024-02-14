@@ -9,13 +9,13 @@ double        Poin, Poin2,New_Price,Old_Price,level,Spread,ARg,RangeAchieved,
               dRange,wRange,dRG,wRG,pipValue,tic,size;
 datetime      T1,T2;
 int           Chart_Scale,modifier,Color,Factor,G1,G2,h,i,l,m,s,t,LP,LS;
-string        item01 = "z[CP Panel] Box 1";
-string        item02 = "y[CP Panel] Box 2";
+string        item01 = "z[CP Panel] Box 4";
+string        item02 = "y[CP Panel] Box 4";
 string        item03 = "z[CP Text] ID&TF";
 string        item04 = "z[CP Text] Spread";
 string        item05 = "z[CP Text] Spread2";
 string        item06 = "z[CP Text] Pip";
-string        item07 = "z[CP Text]   Pip2";
+string        item07 = "z[CP Text]   Pip4";
 string        item08 = "z[CP Text] Range";
 string        item09 = "z[CP Text]   Range2";
 string        item10 = "z[CP Text] Swap";
