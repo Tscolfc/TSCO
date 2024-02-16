@@ -26,6 +26,17 @@ int start() {
 	         Low[i+2] > Low[i+4]
 	        )
            {
+  if (
+	         Close[i+1]>Open[i+4]&& //Bull
+	         Close[i+2]<Open[i+4]&& //Bear
+	         High[i+2] < High[i+4] &&
+	         Low[i+2] > Low[i+4]
+  if (
+	         Close[i+1]>Open[i+4]&& //Bull
+	         Close[i+2]<Open[i+4]&& //Bear
+	         High[i+2] < High[i+4] &&
+	         Low[i+2] > Low[i+4]
+{{
           	Up[i+1]=Low[i+1]-Range*1.4;
            }int start() {
    int i, counter;
