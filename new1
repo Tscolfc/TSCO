@@ -9,3 +9,5 @@ Please type in the math operation you would like to complete:
 ''')
 number_3 = int(input("Enter your the first number: "))
 number_4 = int(input("Enter your the second number: "))
+number_5 = int(input("Enter your the first number: "))
+number_6 = int(input("Enter your the second number: "))
