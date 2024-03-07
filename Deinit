@@ -15,10 +15,7 @@ string        item03 = "z[CP Text] ID&TF";
 string        item04 = "z[CP Text] Spread";
 string        item05 = "z[CP Text] Spread2";
 string        item06 = "z[CP Text] Pip";
-string        item07 = "z[CP Text]   Pip4";
-string        item08 = "z[CP Text] Range";
-string        item09 = "z[CP Text]   Range2";
-string        item10 = "z[CP Text] Swap";
+
 string        item11 = "z[CP Text]   Swap2";
 string        item12 = "z[CP Text] Price1";
 string        item13 = "z[CP Text]   Price2";
