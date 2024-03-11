@@ -6,12 +6,11 @@ int start() {
 
    for(i=0; i<CountBars; i++)
    
-   
    {
       counter=i;
       Range=0;
       AvgRange=0;
-      for (counter=i ;counter<=i+2;counter++)
+      for (counter=i ;counter<=i+2;counter+)
       {
          AvgRange=AvgRange+MathAbs(High[counter]-Low[counter]);
       }
@@ -20,7 +19,7 @@ int start() {
         
 	     //  UP
 	     if (
-	         Close[i+1]>Open[i+4]&& //Bull
+	         Close[i+1]>Open[i+4]&& //null
 	         Close[i+2]<Open[i+4]&& //Bear
 	         High[i+2] < High[i+4] &&
 	         Low[i+2] > Low[i+4]
