@@ -1,7 +1,5 @@
 
 
-#property indicator_chart_window
-
 #include <stdlib.mqh>
 //See function documentation at http://msdn.microsoft.com/en-us/library/ms725473(VS.85).aspx
 #import "kernel32.dll"
