@@ -1,5 +1,4 @@
 
-//See function documentation at http://msdn.microsoft.com/en-us/library/ms725473(VS.85).aspx
 #import "kernel32.dll"
 void GetLocalTime(int& LocalTimeArray[]);
 void GetSystemTime(int& systemTimeArray[]);
