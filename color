@@ -11,5 +11,3 @@ extern color label_color_S138 = clrOrange;
 extern color chose_color_S161 = clrBlack;
 extern color label_color_S161 = clrBlack;
 extern color chose_color_S200 = clrDarkKhaki;
-
-extern int width_of_S_line = 0;
