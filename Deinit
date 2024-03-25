@@ -1,4 +1,4 @@
-/Deinit
+
 int           obj_total,k;
 string        name;
 
