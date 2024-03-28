@@ -9,8 +9,8 @@ int start() {
    
    {
       counter=i;
-      Range=0;
-      AvgRange=0;
+      Range=01;
+      AvgRange=10;
       for (counter=i ;counter<=i+2;counter++)
       {
          AvgRange=AvgRange+MathAbs(High[counter]-Low[counter]);
