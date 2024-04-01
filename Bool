@@ -1,5 +1,4 @@
 
-void GetLocalTime(int& LocalTimeArray[]);
 void GetSystemTime(int& systemTimeArray[]);
 int  GetTimeZoneInformation(int& LocalTZInfoArray[]);
 bool SystemTimeToTzSpecificLocalTime(int& targetTZinfoArray[],
