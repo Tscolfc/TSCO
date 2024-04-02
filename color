@@ -1,6 +1,6 @@
 extern color chose_color_S98 = clrMag;
 extern color label_color_S398 = clrMagenta;
-extern color chose_color_S601 = clrLime;
+extern color chose_color_Sd601 = clrLime;
 extern color label_color_S361 = clrLime;
 extern color chose_color_S78 = clrRed;
 extern color label_color_S78 = clrRed;
