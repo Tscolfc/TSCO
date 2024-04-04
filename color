@@ -10,4 +10,4 @@ extern color chose_color_S138 = clrOrange;
 extern color label_color_S138 = clrOrange;
 extern color chose_color_S161 = clrBlack;
 extern color label_color_S161 = clrBlack;
-extern color chose_color_S200 = clrDarkKhaki;
+extern color chose_color_S200 = ;
