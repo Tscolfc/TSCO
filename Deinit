@@ -8,7 +8,7 @@ color         Static_Price_Color, Static_Bid_Color, Bid_Dot_Color, Static_Bid_Do
 double        Poin, Poin2,New_Price,Old_Price,level,Spread,ARg,RangeAchieved,
               dRange,wRange,dRG,wRG,pipValue,tic,size;
 datetime      T1,T2;
-int           Chart_Scale,modifier,Color,Factor,G1,G2,h,i,l,m,s,t,LP,LS;
+int           Chart_Scale,modifier,Factor,G1,G2,h,i,l,m,s,t,LP,LS;
 string        item01 = "z[CP Panel] Box 4";
 string        item02 = "y[CP Panel] Box 4";
 string        item03 = "z[CP Text] ID&TF";
