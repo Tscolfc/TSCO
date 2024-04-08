@@ -2,7 +2,7 @@
 void GetSystemTime(int& []);
 int  GetTimeZoneInformation(int& LocalTZInfoArray[]);
 bool SystemTimeToTzSpecificLocalTime(int& targetTZinfoArray[],
-     int& systemTimeArray[], int& targetTimeArray[]);
+     int& systemTimeArray[], int& []);
 #import
 
 //Global External Inputs-----------------------------------------------------------------------
