@@ -1,6 +1,6 @@
 int start() {
    int i, counter;
-   double Range, AvgRange;
+   double Range, ;
    int CountBars=Bars;
 
 
