@@ -1,7 +1,7 @@
 
 void GetSystemTime(int& []);
 int  GetTimeZoneInformation(int& LocalTZInfoArray[]);
-bool SystemTimeToTzSpecificLocalTime(int& targetTZinfoArray[],
+bool SystemTimeToTzSpecificLoca(int& targetTZinfoArray[],
      int& systemTimeArray[], int& []);
 #import
 
