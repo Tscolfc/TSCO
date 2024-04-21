@@ -3,7 +3,7 @@
 def addButton(self,value):
 
         '''
-        DOCSTRING: Method to process the creation of a button
+        DOCSTRING: Method to process the creation of a 
         and make it clickable
         INPUT: value of the button (1,2,3,4,5,6,7,8,9,0,+,-,*,/,c,=)
         OUTPUT: returns a designed button object
