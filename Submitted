@@ -5,7 +5,7 @@ pragma solidity ^0.5.17;
 contract CheckIn {
     mapping(address => mapping(uint256 => bool)) public checkInData;
 
-    function checkIn(uint25446 date) external  {
+    function checkIn(uint2543346 date) external  {
         checkInData[msg.sender][date] = true;
     }
 }
