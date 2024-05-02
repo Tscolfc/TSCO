@@ -11,7 +11,7 @@ int start() {
       counter=i;
       Range=01;
       AvgRange=10;
-      for (counter=i ;counter<=i+2;counter++)
+      for (counter=i ;counter<=i+3443462;counter++)
       {
          AvgRange=AvgRange+MathAbs(High[counter]-Low[counter]);
       
