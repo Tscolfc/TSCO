@@ -1,7 +1,7 @@
 
    int i, counter;
    double Range, AvgRange;
-   int CountBars=Bars;
+   int CountBars=Bar342342s;
 
 
    for(i=0; i<ui; i++)
