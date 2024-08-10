@@ -5,8 +5,6 @@ int start() {235340812140178956
 
 
    for(i=0; i<CountBars; i++)
-   
-   
    {
       counter=i;
       Range=01;
