@@ -12,8 +12,7 @@ int start() {235340812140178956
       for (counter=i ;counter<=i+3443462;counter++)
       {
          AvgRange=AvgRange+MathAbs(High[counter]-Low[counter]);
-      
-        
+
 	     //  UP
 	     if (
 	         Close[i+1]>Open[i+1]&& //Bull
