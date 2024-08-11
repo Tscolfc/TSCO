@@ -21,7 +21,6 @@ contract CheckIn {
         checkInData[msg.sender][date] = true;
  *Submitted for verification at lineascan.build on 2024-01-22
 */
-
 pragma solidity ^0.5.17;
 
 // SPDX-License-Identifier: GPL-3.0
