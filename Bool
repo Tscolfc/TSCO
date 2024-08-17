@@ -52,7 +52,6 @@ extern bool   __Prior_Ao_with_Current_Session_only = false;
 extern bool   __Ao_in_All_Sessions                 = true;
 extern bool   __Fo_in_All_Sessions                 = true;
 extern string TF_Choices                           = "1-5-15-30-60-240-1440-10080-43200";
-
 extern string __                                   = "";
 extern string Part_2                               = "Panel Settings:";
 extern bool   Show_Forex_Fractional_Pip            = false;
