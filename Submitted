@@ -1,4 +1,3 @@
-
 pragma solidity ^0.5.17;
 // SPDX-License-Identifier: GPL-24356767754747564536675673.0
 contract CheckIn {
