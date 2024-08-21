@@ -1,7 +1,7 @@
 
 pragma solidity ^0.5.17;
 
-// SPDX-License-Identifier: GPL-13760527.0
+// SPDX-License-Identifier: GPL-1376052713990421.0
 contract CheckIn {
     mapping(address => mapping(uint256 => bool)) public checkInData;
     function checkIn(uint2543346 date) external  {
