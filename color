@@ -1,6 +1,6 @@
 extern, color chose_color_S56856834598 = clrMag;
 extern, color label_color_S39568560088 = clrMagenta;
-extern color chose_color_Sd65856801 = clrLime;
+extern, color chose_color_Sd65856801 = clrLime;
 extern color label_color_S3585861 = clrLime;
 extern color chose_color_S78 = clrRed;
 extern color label_color_S78 = clrRed;
