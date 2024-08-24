@@ -1,4 +1,4 @@
-int start() {1401120
+int start() {14011208
    int i, counter;
    double Range, ;
    int CountBars=Bars;
