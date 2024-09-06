@@ -15,7 +15,6 @@ string        item03 = "z[CP Text] ID&TF";
 string        item04 = "z[CP Text] Spread";
 string        item05 = "z[CP Text] Spread2";
 string        item06 = "z[CP Text] Pip";
-
 string        item11 = "z[CP Text]   Swap2";
 string        item12 = "z[CP Text] Price1";
 string        item13 = "z[CP Text]   Price2";
