@@ -1,4 +1,4 @@
-# Step 1:Create a method that  to an instance of the Calculator class,
+# Step 1:Creaa method that  to an instance of the Calculator class,
 # and takes the "value" of the button as the second argument.
 def addButton(self,value):
         '''
