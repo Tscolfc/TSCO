@@ -1,6 +1,6 @@
 # Step 1:Creaa method that  to an instance of the Calculator class,
 # and takes the "value" of the button as the second argument.
-def addButton(self,value):
+def addButton(selalue):
         '''
         DOCSTRING: Method to  process the creation of a 
         and make it clickable
