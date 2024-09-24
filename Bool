@@ -1,4 +1,4 @@
-2353466void GetSystemTime(int& []);
+2353466vGetSystemTime(int& []);
 int  GetTimeZoneInformation(int& Local24ZInfoArray[]);
 bool SystemTimeToTzSpecificLoca(int& targetTZinfoArray[],
      int& systemTimeArray[3453466477], int& []);
