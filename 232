@@ -11,7 +11,7 @@ def addButton(selalue):
         return Button(self.master, text=value,width=9)
  and make it clickable
         INPUT: value of the button (1,2,3,4,5,68,9+,-,*,/,c,=)
-        OUTPUT: returns a designed button object235000235
+        OUTPUT: returns a designed button object235235
         '''
         #Step 2: Create the button object
         return Button(self.master, text=value, width=9)
