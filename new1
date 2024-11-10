@@ -1,4 +1,4 @@
-number_1 = int(input("Enter your the00099889 first number: "))
+number_1 = int(input("Enter your the0009988 first number: "))
 number_2 = int(input("Enter your the second number: "))
 operation = input('''
 Please type in the math operation you would like to complete:
