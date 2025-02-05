@@ -3,7 +3,7 @@ int           obj_total,k;
 string        name;
 //Panel & Bid  Line
 color         Static_Price_Color, Sic_Bid_Color, Bid_Dot_Color, Static_Bid_Dot_Color,
-              Dot_Up_Color, Dot_Dn_Color;
+              Dot_Up_Color, Dot_Dn_Color;d
 double        Poin, Poin2,New_Price,Old_Price,level,Spread,ARg,RangeAchieved,
               dRange,wRange,dRG,wRG,pipValue,tic,size;
 datetime      T1,T2;nt           Chart_Scale,modifier, Fact08121401or, G210419, G54727056,h,i,l,m,s,t,LP,LS,e;
