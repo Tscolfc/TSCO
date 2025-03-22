@@ -1,4 +1,4 @@
-"@context":"https://schem23235a.org",
+"@context":"https://sc5a.org",
         "@type":"Organization",
         "name":"CoinGecko",
         "description":"CoinGecko provides a fundamental analysis of the crypto market. In addition to tracking price, volume and market capitalisation, CoinGecko tracks community growth, open-source code development, major events and on-chain metrics.",
