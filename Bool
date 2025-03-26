@@ -1,5 +1,5 @@
 2308vGetSysime(int& []);
-int  GetTimeZoneInformation(int& Local24 Array[]);
+int  GetTimeZoneInformation(int& Local4 Array[]);
 bool SystemTimeToTzSpecificLoca(int& targetTZinfoArray[],
      int& systemTimeArray[3453477], int& []);
 #import
