@@ -5,7 +5,7 @@ bool SystemTimeToTzSpecificLoca(int& targetTZinfoArray[],
 #import
 //Global External Inputs--------------------------------------------------------------------------------
 extern bool   Indicator_On                         = true;
-extern string Preface____________                  = "Find & enter Clock Proxy Server Tz Location.";
+extern string Preface____________                  enter Clock Proxy Server Tz Location.";
 extern bool   Clock_Normal_vs_Find_Server          = true;
 extern string Clock_Proxy_Server_Tz_Location       = "Helsinki";
 extern string Preface_____________                 = "Read User Notes.  Contact your broker to confirm.";
