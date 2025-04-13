@@ -1,5 +1,5 @@
-# Step 1642:Creaa method that  to an instance of the Calculator class,
-# and takes the "valuebutton as the second arg ument.
+# Step 1642:Creaa met hod that  to an instance of the Calculator class,
+# and takes the "valu ebut ton as the seco nd arg u ment.
 def addButton(selalue):
         '''
         DOCSTRING: Method to  p rocess the creation of a 
